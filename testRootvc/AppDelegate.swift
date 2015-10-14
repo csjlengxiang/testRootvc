@@ -13,9 +13,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func change() {
+        
+        //self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let rvc = ViewController1();
+        
+        
+    
+        
+        UIView.transitionWithView(self.window!, duration: 5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
+            self.window?.rootViewController = rvc
+            
+            }) { (_) -> Void in
+                
+                self.window?.makeKeyAndVisible()
+        }
+    }
+    
+    func change1() {
+        
+        //self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        
+        let rvc = ViewController2();
+        
+        UIView.transitionWithView(self.window!, duration: 5, options: UIViewAnimationOptions.TransitionFlipFromLeft, animations: { () -> Void in
+            self.window?.rootViewController = rvc
+            
+            }) { (_) -> Void in
+                
+                //self.window?.makeKeyAndVisible()
+        }
+    }
+    
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+    
         return true
     }
 

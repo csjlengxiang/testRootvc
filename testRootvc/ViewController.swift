@@ -12,7 +12,21 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        self.view.backgroundColor = UIColor.yellowColor()
+        
+        var btn = UIButton()
+        btn.frame = CGRectMake(0, 0, 100, 100)
+        btn.backgroundColor = UIColor.redColor()
+        
+        btn.addTarget(self, action: "clicked:", forControlEvents: UIControlEvents.TouchUpInside)
+        self.view.addSubview(btn)
+    }
+    
+    func clicked(btn: UIButton) {
+        print("clicked")
+        var ap = UIApplication.sharedApplication().delegate as! AppDelegate
+        ap.change1()
+        
     }
 
     override func didReceiveMemoryWarning() {
